@@ -1,0 +1,26 @@
+.wrapper {
+ display: flex;
+ gap: 20px;
+ align-items: center;
+ border: 2px solid pink;
+ padding: 15px;
+
+}
+
+.navLink {
+        
+   text-decoration: none;
+   background: rgb(185, 132, 132);
+   color: black;
+   padding: 20px;
+   transition: 0.3s;
+   border-radius: 5px;
+   margin: 15px 15px;
+   
+   
+
+   &:hover{
+      background: gray;
+   }
+}
+

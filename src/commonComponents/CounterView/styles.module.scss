@@ -1,6 +1,6 @@
 .wrapper{
-   max-width: 450px;
-   padding: 50px 50px;
+   max-width: 250px;
+   padding: 30px 30px;
    border: 1px solid black;
    border-radius: 10px;
    margin: 0 auto;
@@ -14,11 +14,12 @@
    border-radius: 10px;
    text-align: center;
    font-weight: 700;
+   font-size: 20px;
    padding: 10px;
    width: 50%;
    height: 30px;
    margin: 0 auto 30px;
-   background-color: rgb(214, 225, 235);
+   background-color: rgb(255, 255, 255);
 }
 
 .controlButtons {
@@ -34,4 +35,5 @@
    width: 50px;
    height: 50px;
    cursor: pointer;
+  
 }

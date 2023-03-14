@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-import CounterView from "../components/CounterView";
+import Layout from "../components/Layout";
 
 class CounterContainer extends Component {
   constructor(props) {
@@ -12,49 +12,38 @@ class CounterContainer extends Component {
     };
   }
 
-  handleIncrement = () => {
-    this.setState((previousState) => {
-      const incrementedValue = previousState.countValue + 1;
-      const isEvenNamber =
-        incrementedValue % 2 === 0
-          ? `${"Введено чётное число"}`
-          : `${"Введено нечётное число"}`;
+  componentDidUpdate(_, previousState) {
+    const currentValue = this.state.countValue;
 
-      return {
-        countValue: incrementedValue,
-        isEven: isEvenNamber,
-      };
-    });
+    if (previousState.countValue !== currentValue) {
+      this.setState({ isEven: currentValue % 2 === 0 });
+    }
+  }
+
+  handleIncrement = () => {
+    this.setState({ countValue: this.state.countValue + 1 });
   };
+
   handleDecrement = () => {
     if (this.state.countValue > 0) {
-      this.setState((previousState) => {
-        const decrementedValue = previousState.countValue - 1;
-        const isEvenNamber =
-          decrementedValue % 2 === 0
-            ? `${"Введено чётное число"}`
-            : `${"Введено нечётное число"}`;
-
-        return {
-          countValue: decrementedValue,
-          isEven: isEvenNamber,
-        };
-      });
+      this.setState({ countValue: this.state.countValue - 1 });
     }
   };
 
   handleReset = () => {
-    this.setState({ countValue: 0, isEven: `${"Введено чётное число"}` });
+    this.setState({ countValue: 0 });
   };
 
   render() {
+    const { state, handleDecrement, handleReset, handleIncrement } = this;
+    const { countValue, isEven } = state;
     return (
-      <CounterView
-        counterValue={this.state.countValue}
-        isEven={this.state.isEven}
-        handleIncrement={this.handleIncrement}
-        handleDecrement={this.handleDecrement}
-        handleReset={this.handleReset}
+      <Layout
+        countValue={state.countValue}
+        handleIncrement={handleIncrement}
+        handleDecrement={handleDecrement}
+        handleReset={handleReset}
+        isEven={state.isEven}
       />
     );
   }
