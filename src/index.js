@@ -6,10 +6,9 @@ import Router from "./routes/Router";
 import MainLayout from "./commonComponents/MainLayout/MainLayout";
 
 import "./index.css";
-import configureStore from "./Redux-store/configureStore";
+import { store } from "Redux-store/configureStore";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const store = configureStore();
 
 root.render(
   <BrowserRouter>

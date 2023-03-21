@@ -5,5 +5,5 @@ export const ROUTE_NAMES = {
   COUNTERS_MANAGER: "/counters-manager",
   CONDITIONAL_RENDERING: "/conditional-rendering",
   LIST: "/lists",
-  TODO_LIST: "/todo-list",
+  TODO: "/todos",
 };

@@ -1,0 +1,25 @@
+.wrapper {
+   max-width: 100%;
+}
+
+.controlsArea {
+   display: flex;
+   justify-content: center;   
+   column-gap: 10px;
+   margin-top: 5px;
+
+}
+
+.input {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   padding: 10px 0;   
+   border: 3px solid rgb(172, 212, 169);   
+   outline: none;
+   font-family:Arial, Helvetica, sans-serif;
+   font-size: large;
+   
+   
+
+}
